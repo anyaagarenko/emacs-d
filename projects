@@ -1,0 +1,4 @@
+;;; -*- lisp-data -*-
+(("~/dev/self-service/")
+ ("~/dev/interviews/django-iw/")
+ ("~/dev/analytics/"))

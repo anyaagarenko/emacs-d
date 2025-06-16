@@ -19,6 +19,7 @@
 (use-package clojure-mode)
 (use-package magit)
 (use-package paredit)
+(use-package pyenv-mode)
 (use-package python-pytest)
 (use-package typescript-mode)
 (use-package web-mode)
