@@ -39,6 +39,7 @@
 (define-key term-raw-map (kbd "M-x") #'execute-extended-command)
 
 (global-set-key (kbd "C-c s") 'sort-lines)
+(global-set-key (kbd "C-c w") 'sort-words)
 (global-set-key (kbd "C-x 2") (lambda () (interactive) (split-window-below) (other-window 1)))
 (global-set-key (kbd "C-x 3") (lambda () (interactive) (split-window-right) (other-window 1)))
 (global-set-key (kbd "C-x C-d") 'dired)
