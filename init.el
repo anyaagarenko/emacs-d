@@ -25,8 +25,8 @@
 
 (require 'term)
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace nil t)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
+(add-hook 'before-save-hook 'delete-trailing-whitespace nil t)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 (add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
@@ -38,6 +38,7 @@
 (define-key term-raw-map (kbd "C-x") nil)
 (define-key term-raw-map (kbd "M-x") #'execute-extended-command)
 
+(global-set-key (kbd "C-c s") 'sort-lines)
 (global-set-key (kbd "C-x 2") (lambda () (interactive) (split-window-below) (other-window 1)))
 (global-set-key (kbd "C-x 3") (lambda () (interactive) (split-window-right) (other-window 1)))
 (global-set-key (kbd "C-x C-d") 'dired)
@@ -45,9 +46,9 @@
 (global-set-key (kbd "C-x f") 'find-file)
 (global-set-key (kbd "C-x k") 'buffer-save-and-kill)
 (global-set-key (kbd "C-x t") (lambda () (interactive) (term shell-file-name)))
+(global-set-key (kbd "M-[") 'paredit-wrap-square)
 (global-set-key (kbd "M-\"") 'paredit-meta-doublequote)
 (global-set-key (kbd "M-{") 'paredit-wrap-curly)
-(global-set-key (kbd "M-[") 'paredit-wrap-square)
 
 (setq cider-repl-display-help-banner nil)
 (setq create-lockfiles nil)
