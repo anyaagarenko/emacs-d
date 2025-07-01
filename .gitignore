@@ -1,9 +1,9 @@
-*~
 *#
 *.elc
-
+*~
 auto-save-list
 custom.el
 ido.last
+projects
 straight
 transient
