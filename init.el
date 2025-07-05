@@ -49,6 +49,7 @@
 (global-set-key (kbd "C-x t") (lambda () (interactive) (term shell-file-name)))
 (global-set-key (kbd "M-[") 'paredit-wrap-square)
 (global-set-key (kbd "M-\"") 'paredit-meta-doublequote)
+(global-set-key (kbd "M-_") (lambda () (interactive) (insert "—")))
 (global-set-key (kbd "M-{") 'paredit-wrap-curly)
 
 (setq cider-repl-display-help-banner nil)
