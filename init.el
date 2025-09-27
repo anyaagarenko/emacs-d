@@ -12,7 +12,6 @@
   (load bootstrap-file nil 'nomessage))
 
 (straight-use-package 'use-package)
-
 (use-package straight :custom (straight-use-package-by-default t))
 
 (use-package cider)
@@ -20,24 +19,23 @@
 (use-package magit)
 (use-package paredit)
 (use-package python-pytest)
+(use-package smart-shift)
 (use-package typescript-mode)
 (use-package web-mode)
+(use-package yaml-mode)
 
 (require 'term)
 
-(add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace nil t)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 (add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
-
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-
 (define-key dired-mode-map (kbd "=") 'dired-create-empty-file)
 (define-key term-raw-map (kbd "C-c") 'Control-X-prefix)
 (define-key term-raw-map (kbd "C-x") nil)
 (define-key term-raw-map (kbd "M-x") #'execute-extended-command)
-
 (global-set-key (kbd "C-c s") 'sort-lines)
 (global-set-key (kbd "C-c w") 'sort-words)
 (global-set-key (kbd "C-x 2") (lambda () (interactive) (split-window-below) (other-window 1)))
@@ -62,14 +60,15 @@
 (setq magit-display-buffer-function (lambda (buffer) (display-buffer buffer '(display-buffer-same-window))))
 (setq make-backup-files nil)
 (setq python-pytest-executable "poetry run pytest --exitfirst")
+(setq smart-shift-indentation-level 2)
 (setq visible-bell t)
 (setq w32-enable-caps-lock t)
-
 (setq-default indent-tabs-mode nil)
 
 (electric-pair-mode t)
 (global-auto-revert-mode t)
 (global-display-line-numbers-mode)
+(global-smart-shift-mode t)
 (ido-mode t)
 (set-frame-parameter nil 'fullscreen 'fullboth)
 (tool-bar-mode -1)
