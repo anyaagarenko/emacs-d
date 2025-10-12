@@ -31,7 +31,9 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 (add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
-(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue?\\'" . web-mode))
 (define-key dired-mode-map (kbd "=") 'dired-create-empty-file)
 (define-key term-raw-map (kbd "C-c") 'Control-X-prefix)
 (define-key term-raw-map (kbd "C-x") nil)
@@ -63,6 +65,7 @@
 (setq smart-shift-indentation-level 2)
 (setq visible-bell t)
 (setq w32-enable-caps-lock t)
+(setq web-mode-css-indent-offset 2)
 (setq-default indent-tabs-mode nil)
 
 (electric-pair-mode t)
