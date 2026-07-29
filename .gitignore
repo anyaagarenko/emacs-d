@@ -6,4 +6,5 @@ custom.el
 ido.last
 projects
 straight
+tramp
 transient
