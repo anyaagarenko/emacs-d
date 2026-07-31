@@ -34,6 +34,7 @@
 (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.vue?\\'" . web-mode))
+(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
 (define-key dired-mode-map (kbd "=") 'dired-create-empty-file)
 (define-key term-raw-map (kbd "C-c") 'Control-X-prefix)
 (define-key term-raw-map (kbd "C-x") nil)
@@ -64,6 +65,8 @@
 (setq make-backup-files nil)
 (setq python-indent-def-block-scale 1)
 (setq python-pytest-executable "uv run pytest --exitfirst")
+(with-eval-after-load 'projectile
+  (put 'projectile-project-compilation-dir 'safe-local-variable #'stringp))
 (setq smart-shift-indentation-level 2)
 (setq visible-bell t)
 (setq w32-enable-caps-lock t)
