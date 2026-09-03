@@ -19,6 +19,7 @@
 (use-package magit)
 (use-package paredit)
 (use-package python-pytest)
+(use-package rust-mode)
 (use-package smart-shift)
 (use-package typescript-mode)
 (use-package web-mode)
